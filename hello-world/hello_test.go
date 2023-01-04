@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
+	t.Parallel()
+
 	assertCorrectMessage := func(t testing.TB, got, want string) {
 		t.Helper()
 		if got != want {
@@ -11,12 +13,16 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("saying hello to people", func(t *testing.T) {
+		t.Parallel()
+
 		got := Hello("Chris", "")
 		want := "Hello, Chris"
 
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("empty string defaults to 'World'", func(t *testing.T) {
+		t.Parallel()
+
 		got := Hello("", "")
 		want := "Hello, World"
 
@@ -24,6 +30,8 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("in Spanish", func(t *testing.T) {
+		t.Parallel()
+
 		got := Hello("Elodie", "Spanish")
 		want := "Hola, Elodie"
 
@@ -31,6 +39,8 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("in French", func(t *testing.T) {
+		t.Parallel()
+
 		got := Hello("Elodie", "French")
 		want := "Bonjour, Elodie"
 
