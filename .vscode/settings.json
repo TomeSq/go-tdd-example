@@ -31,4 +31,7 @@
         "usePlaceholders": false,
         "formatting.gofumpt": true
     },
+    "[go.mod]": {
+        "editor.defaultFormatter": "golang.go"
+    },
 }
