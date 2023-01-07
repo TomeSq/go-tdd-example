@@ -1,16 +1,22 @@
 package arrays
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Parallel()
 
-	numbers := [5]int{1, 2, 3, 4, 5}
+	t.Run("collection of nay size", func(t *testing.T) {
+		t.Parallel()
 
-	got := Sum(numbers)
-	want := 15
+		numbers := []int{1, 2, 3}
 
-	if got != want {
-		t.Errorf("got %d want %d given, %v", got, want, numbers)
-	}
+		got := Sum(numbers)
+		want := 6
+
+		if got != want {
+			t.Errorf("got %d want %d given, %v", got, want, numbers)
+		}
+	})
 }
