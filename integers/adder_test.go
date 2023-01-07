@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestAdder(t *testing.T) {
 	t.Parallel()
@@ -11,4 +14,10 @@ func TestAdder(t *testing.T) {
 	if sum != excepted {
 		t.Errorf("excepted '%d' but got '%d'", excepted, sum)
 	}
+}
+
+func ExampleAdd() {
+	sum := Add(1, 5)
+	fmt.Println(sum)
+	// Output: 6
 }
