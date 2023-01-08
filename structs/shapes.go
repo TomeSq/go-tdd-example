@@ -1,14 +1,24 @@
 package structs
 
+import "math"
+
 type RectAngle struct {
 	Width  float64
 	Height float64
 }
 
-func Perimeter(rectAngle RectAngle) float64 {
-	return 2 * (rectAngle.Width + rectAngle.Height)
+func (r RectAngle) Area() float64 {
+	return (r.Width * r.Height)
 }
 
-func Area(rectAngle RectAngle) float64 {
-	return (rectAngle.Width * rectAngle.Height)
+type Circle struct {
+	Radius float64
+}
+
+func (c Circle) Area() float64 {
+	return math.Pi * c.Radius * c.Radius
+}
+
+func Perimeter(rectAngle RectAngle) float64 {
+	return 2 * (rectAngle.Width + rectAngle.Height)
 }
