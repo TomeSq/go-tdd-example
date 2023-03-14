@@ -1,6 +1,11 @@
 {
-    "recommendations": [
-        "golang.go",
-        "github.codespaces"
-    ]
+  "recommendations": [
+    "github.codespaces",
+    "streetsidesoftware.code-spell-checker",
+    "saikou9901.evilinspector",
+    "oderwat.indent-rainbow",
+    "esbenp.prettier-vscode",
+    "shardulm94.trailing-spaces",
+    "mosapride.zenkaku"
+  ]
 }
