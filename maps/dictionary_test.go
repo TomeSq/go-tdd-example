@@ -63,6 +63,22 @@ func Test_更新(t *testing.T) {
 	})
 }
 
+func Test_削除(t *testing.T) {
+	word := "test"
+	definition := "test definition"
+
+	t.Run(`存在するキーの削除`, func(t *testing.T) {
+		dictionary := Dictionary{word: definition}
+
+		dictionary.Delete(word)
+
+		_, err := dictionary.Search(word)
+		if err != ErrNotFound {
+			t.Errorf("Expected %q to be deleted", word)
+		}
+	})
+}
+
 func assertStrings(t *testing.T, got, want string) {
 	t.Helper()
 
@@ -79,7 +95,7 @@ func assertError(t *testing.T, got, want error) {
 	}
 
 	if got == nil {
-		if want != nil {
+		if want == nil {
 			return
 		}
 		t.Fatal("expected to get an error.")
